@@ -30,83 +30,91 @@ public class Student{
     }
         switch(State){
             case"Gujarat":
-                word="The student is from West india";
+                word="The student is from the Western states of india";
+                break;
             case"Goa":
-                word="The student is from West india";
+                word="The student is from the Western states of india";
+                break;
             case"Maha Rashtra":
-                word="The student is from West india";
+                word="The student is from the Western states of india";
+                break;
+            case "Rajasthan":
+                word = "The Student is from the Western states of India";
+                break;
+
             case"Arunachal Pradesh":
                 word="The student is from East india";
+                break;
             case "Assam":
                 word="The student is from East india";
-            case " Manipur":
+                break;
+            case "Meghalaya":
                 word="The student is from East india";
+                break;
+            case "Manipur":
+                word="The student is from East india";
+                break;
+                
             case "Delhi":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
                 break;
-
-            case "Haryana":
-                word = "The Student is from the southern states of India";
-                break;
-
             case "Jammu and Kashmir":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
                 break;
 
             case "Himachal Pradesh":
-                word = "The Student is from the southern states of India";
-                break;
-
-            case "Uttarpradesh":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
                 break;
 
             case "Punjab":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
                 break;
-
+            
             case "Uttarakhand":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
+                break;
+            case "Haryana":
+                word = "The Student is from the Northern states of India";
                 break;
 
-            case "Rajasthan":
-                word = "The Student is from the southern states of India";
+            case "Uttarpradesh":
+                word = "The Student is from the Northern states of India";
                 break;
 
             case "Ladakh":
-                word = "The Student is from the southern states of India";
+                word = "The Student is from the Northern states of India";
                 break;
 
-            case "Chandigarh":
-                word = "The Student is from the southern states of India";
-                break;
+            // case "Chandigarh":
+            //     word = "The Student is from the southern states of India";
+            //     break;
 
             
-            case "Andaman & Nicobar":
-                word = "The Student is from the northern states of India";
-                break;
 
-            case "Andhra Pradesh":
-                word = "The Student is from the northern states of India";
+            case "Kerala":
+                word = "The Student is from the Southern states of India";
                 break;
 
             case "Karnataka":
-                word = "The Student is from the northern states of India";
-                break;
-            
-            case "Lakshadweep":
-                word = "The Student is from the northern states of India";
-                break;
-
-            case "Pondicherry":
-                word = "The Student is from the northern states of India";
+                word = "The Student is from the Southern states of India";
                 break;
 
             case "Tamilnadu":
-                word = "The Student is from the northern states of India";
+                word = "The Student is from the Southern states of India";
                 break;
-                System.out.print(word);
+            
+            case "Andhra Pradhesh":
+                word = "The Student is from the Southern states of India";
+                break;
+
+            case "Telengana":
+                word = "The Student is from the Southern states of India";
+                break;
+
+            default:
+                word="hi";
         }
+System.out.print(word);
     
 
 }
