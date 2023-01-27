@@ -54,7 +54,7 @@ public class Student{
             case "Manipur":
                 word="The student is from East india";
                 break;
-                
+
             case "Delhi":
                 word = "The Student is from the Northern states of India";
                 break;
@@ -85,12 +85,6 @@ public class Student{
                 word = "The Student is from the Northern states of India";
                 break;
 
-            // case "Chandigarh":
-            //     word = "The Student is from the southern states of India";
-            //     break;
-
-            
-
             case "Kerala":
                 word = "The Student is from the Southern states of India";
                 break;
@@ -112,7 +106,7 @@ public class Student{
                 break;
 
             default:
-                word="hi";
+                word="The Student is from the Union teritories of India";
         }
 System.out.print(word);
     
