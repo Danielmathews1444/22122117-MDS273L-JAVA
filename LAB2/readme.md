@@ -17,3 +17,6 @@ Constraints
 
 This program can only store up to 1024 names.
 
+Flow Chart:
+
+![alt text](flowchart.jpg)
