@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class lab3{
+    /////////////////////////////////////
     static float mean(int[] arr){
         float z=0;
         for(int i=0;i<arr.length;i++){
@@ -21,7 +22,6 @@ public class lab3{
                 }
         }
         }
-        //////////////////////////////////////////
         for(int i=0;i<arr.length;i++){
             if(arr.length % 2==0){
                 float m=(arr[(arr.length/2)-1]+arr[(arr.length/2)]);
@@ -32,6 +32,7 @@ public class lab3{
         }
         return median; 
     }
+    /////////////////////////////////////////////
     static int mode(int[] arr){
 
         int max = 0;
@@ -53,7 +54,7 @@ public class lab3{
         }
         return mode;
     }
-    
+    //////////////////////////////////////////////
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         int ctrl = 0;
