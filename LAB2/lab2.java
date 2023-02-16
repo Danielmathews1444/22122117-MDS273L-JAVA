@@ -19,6 +19,8 @@ public class lab2{
                     System.out.print("Enter your name : ");
                     name=ob.nextLine();
                     int x=0;
+                    /////////////////////////////////
+                    ////checking 
                     for(int i=0;i<ctrl;i++){
                         if (name.equals(details[i])){
                             System.out.println("The name already exists");
@@ -26,6 +28,8 @@ public class lab2{
                             break;
                         }
                     }
+                    //////////////////////////
+
                     if(x==0){
                         details[ctrl]=name;
                         ctrl++;
@@ -42,7 +46,6 @@ public class lab2{
                         }
                         break;
                     }
-                        
                     if(z==0){
                         System.out.println("Entered name doesnot exists");
                     }  
