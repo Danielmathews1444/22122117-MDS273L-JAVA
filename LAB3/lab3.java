@@ -1,8 +1,6 @@
 
-// Importing the Scanner class from the Java Util Library
 import java.util.Scanner;
 public class Lab3 {
-// Function to calculate mean of an array of integers
 static float calculateMean(int[] arr){
     float sum = 0;
     for(int i=0; i<arr.length; i++){
@@ -12,11 +10,9 @@ static float calculateMean(int[] arr){
     return mean;
 }
 
-// Function to calculate median of an array of integers
 static float calculateMedian(int[] arr){
     float median = 0;
 
-    // Sorting the array in ascending order
     for (int i = 0; i < arr.length; i++) {
         for (int j = 0; j < arr.length-i-1; j++) {
             if(arr[j] >= arr[j+1]){
@@ -27,7 +23,6 @@ static float calculateMedian(int[] arr){
         }
     }
 
-    // Calculating the median of the array
     for(int i=0; i<arr.length; i++){
         if(arr.length % 2 == 0){
             float m = (arr[(arr.length/2)-1] + arr[(arr.length/2)]);
@@ -40,7 +35,6 @@ static float calculateMedian(int[] arr){
     return median; 
 }
 
-// Function to calculate mode of an array of integers
 static int calculateMode(int[] arr){
     int max = 0;
     int mode = 0;
@@ -58,7 +52,6 @@ static int calculateMode(int[] arr){
         }
     }
 
-    // If no mode is present in the array
     if(max == 1){
         mode = 0;
     }
@@ -66,13 +59,11 @@ static int calculateMode(int[] arr){
     return mode;
 }
 
-// Main function
 public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
     int ctrl = 0;
     int[] arr = new int[10];
 
-    // Taking input from the user and storing it in the array
     for(int i=0; i<arr.length; i++){
         System.out.print("Enter the " + (i+1) + "th element of the array: ");
         arr[i] = Integer.parseInt(scan.nextLine());
@@ -92,8 +83,7 @@ public static void main(String[] args){
                 System.out.println("The median of the array is: " + calculateMedian(arr));
                 break;
             case 3://mode
-                int m = calculateMode(arr);//check if there is a mode or not
-                if(m == 0){
+                int m = calculateMode(arr);
                     System.out.println("The given array has no mode");
                 } else {
                     System.out.println("The mode of the array is: " + m);
