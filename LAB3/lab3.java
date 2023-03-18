@@ -1,6 +1,5 @@
-
 import java.util.Scanner;
-public class Lab3 {
+public class lab3 {
 static float calculateMean(int[] arr){
     float sum = 0;
     for(int i=0; i<arr.length; i++){
@@ -9,7 +8,6 @@ static float calculateMean(int[] arr){
     float mean = sum/arr.length;
     return mean;
 }
-
 static float calculateMedian(int[] arr){
     float median = 0;
 
@@ -62,7 +60,7 @@ static int calculateMode(int[] arr){
 public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
     int ctrl = 0;
-    int[] arr = new int[10];
+    int[] arr = new int[5];
 
     for(int i=0; i<arr.length; i++){
         System.out.print("Enter the " + (i+1) + "th element of the array: ");
@@ -84,16 +82,18 @@ public static void main(String[] args){
                 break;
             case 3://mode
                 int m = calculateMode(arr);
+                if(m==0){
                     System.out.println("The given array has no mode");
-                } else {
+                } 
+                else {
                     System.out.println("The mode of the array is: " + m);
                 }
                 break;
         }
-
         System.out.print("Press 0 to continue.\nPress any other key to exit.\nChoice --> ");
         ctrl = Integer.parseInt(scan.nextLine());
 
     } while(ctrl == 0);
 }
 }
+
