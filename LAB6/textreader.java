@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-public class textreader {
+public class textreader{
     static String[][] charCounter(String a,char[] b){
         char[] arr = b;
         int[] count = new int[arr.length];
@@ -66,12 +66,12 @@ public class textreader {
             for (int j1 = i1 + 1; j1 < w; j1++) {
                 if (count[j1] > count[i1]) {
                     int temp1 = count[i1];
-                    count[i1] = count[j1];
-                    count[j1] = temp1;
-    
                     String temp2=arr[i1];
+                    count[i1] = count[j1];
                     arr[i1] = arr[j1];
-                    arr[j1] = temp2;
+                    count[j1] = temp1;
+                    arr[j1]= temp2;
+                    
                 }
             }
         }
@@ -100,42 +100,133 @@ public class textreader {
         }
         return arr;
     }
-    static String[][] leastwrd(String a){
+    static String[][] leastwrd(String a) {
         String[][]arr1= wordcount(a);
         String[][]arr=new String[2][5];
-        for(int i=arr1[1].length-1;i>=arr1[0].length;i--){
-            arr[0][i]=arr1[0][i];
-            arr[1][i]=arr1[1][i];
+        for (int i = 0; i < 5; i++) {
+            if (i >= 0 ) {
+            if(!arr1[1][i].equals(null)){
+                arr[0][4-i]=arr1[0][arr1[0].length-i-1];
+                arr[1][4-i]=arr1[1][arr1[0].length-i-1];
+            }
+        }
         }
         return arr;
     }
+
     static String[][] topchar(String a){
-        char[] arr1 = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-        String[][] arr = charCounter(a,arr1);
+        char[] arr2 = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        String[][] arr1 = charCounter(a,arr2);
+        String[][] arr = new String[2][5];
         for(int i=0;i<5;i++){
-            
+            arr[0][i] = arr1[0][i];
+            arr[1][i] = arr1[1][i];
         }
+        return arr;
     }
-    public static void main(String[] args) {
-        String str = "";
-        try{
-            File fr =new File("text.txt");
-            Scanner scan =new Scanner(fr);
-            while(scan.hasNextLine()){
-                String s = scan.nextLine();
-                str+=s;
+    static String[][] leastchar(String a){
+        char[] arr2 = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        String[][] arr1 = charCounter(a,arr2);
+        String[][] arr = new String[2][5];
+        for (int i = 0; i < 5; i++) {
+            if (i >= 0 ) {
+            if(!arr1[1][i].equals(null)){
+                arr[0][4-i]=arr1[0][arr1[0].length-i-1];
+                arr[1][4-i]=arr1[1][arr1[0].length-i-1];
             }
-            scan.close();
         }
-        catch(Exception ex){
+        }
+        return arr;
+    }
+    static void filewriter(String[][] vowelCount, String[][] digitCount, String[][] topWords, String[][] leastWords, String[][] topChars, String filePath) {
+        try {
+            File file = new File(filePath);
+            FileWriter fw = new FileWriter(file);
+            fw.write("Vowel Count:\n");
+            for(int i = 0; i < vowelCount[0].length; i++) {
+                fw.write(vowelCount[0][i] + ": " + vowelCount[1][i] + "\n");
+            }
+    
+            fw.write("Digit Count:\n");
+            for(int i = 0; i < digitCount[0].length; i++) {
+                fw.write(digitCount[0][i] + ": " + digitCount[1][i] + "\n");
+            }
+    
+            fw.write("Top Words:\n");
+            for(int i = 0; i < topWords[0].length; i++) {
+                fw.write(topWords[0][i] + ": " + topWords[1][i] + "\n");
+            }
+    
+            fw.write("Least Words:\n");
+            for(int i = 0; i < leastWords[0].length; i++) {
+                fw.write(leastWords[0][i] + ": " + leastWords[1][i] + "\n");
+            }
+    
+            fw.write("Top Characters:\n");
+            for(int i = 0; i < topChars[0].length; i++) {
+                fw.write(topChars[0][i] + ": " + topChars[1][i] + "\n");
+            }
+    
+            fw.close();
+            System.out.println("Results written to file successfully.");
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        // String[] arr=vowel(str);
-        // System.out.print("[");
-        // for(int i=0;i<arr.length;i++){
-        //     System.out.print(arr[i]+", ");
-        // }
-        // System.out.print("]");
-            topwrd(str);
     }
+    
+    public static void main(String[] args) {
+        String str = "";
+        try {
+            File fr = new File("text.txt");
+            Scanner scan = new Scanner(fr);
+            while(scan.hasNextLine()) {
+                String s = scan.nextLine();
+                str += s;
+            }
+            scan.close();
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    
+        // Perform various analyses on the text
+        String[][] vowelCount = vowel(str);
+        String[][] digitCount = digit(str);
+        String[][] topWords = topwrd(str);
+        String[][] leastWords = leastwrd(str);
+        String[][] topChars = topchar(str);
+    
+        // Print out the results of each analysis
+        System.out.println("***********************");
+        System.out.println("Vowel Count:");
+        for(int i = 0; i < vowelCount[0].length; i++) {
+            System.out.println(vowelCount[0][i] + ": " + vowelCount[1][i]);
+        }
+        System.out.println("***********************");
+        System.out.println("Digit Count:");
+        for(int i = 0; i < digitCount[0].length; i++) {
+            System.out.println(digitCount[0][i] + ": " + digitCount[1][i]);
+        }
+        System.out.println("***********************");
+        System.out.println("Top Words:");
+        for(int i = 0; i < topWords[0].length; i++) {
+            System.out.println(topWords[0][i] + ": " + topWords[1][i]);
+        }
+        System.out.println("***********************");
+        System.out.println("Top Characters:");
+        for(int i = 0; i < topChars[0].length; i++) {
+            System.out.println(topChars[0][i] + ": " + topChars[1][i]);
+        }
+        System.out.println("***********************");
+        System.out.println("Least Words:");
+        for(int i = 0; i < leastWords[0].length; i++) {
+            System.out.println(leastWords[0][i] + ": " + leastWords[1][i]);
+        }
+        System.out.println("***********************");
+        System.out.println("Least character:");
+        for(int i = 0; i < leastWords[0].length; i++) {
+            System.out.println(leastchar(str)[0][i] + ": " + leastWords[1][i]);
+        }
+        System.out.println("***********************");
+        filewriter(vowelCount, digitCount, topWords, leastWords, topChars, "results.txt");
+    }  
 }

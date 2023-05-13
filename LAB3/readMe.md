@@ -1,4 +1,14 @@
-# Java program to find Mean, Median, and Mode of an Array
+## Question
+
+Create a java program that performs the following operation:
+The program should collect an integer array from the user
+After the array is entered, you need to create a menu of items
+Find the Mean Value
+Find the Median Value
+Find the Mode Value
+From the user-given array.
+The program should have a minimum of 3 functions apart from the main function; each of the functions implements the Mean, Median, and Mode computation by accepting the array user has entered as a parameter and returning the value as a result. From the main method, you will display the result.
+
 
 This Java program calculates the Mean, Median, and Mode of an Array of 10 integers. It takes the input from the user and then displays a menu to select the operation to perform.
 
@@ -29,4 +39,4 @@ The program assumes that the user will only enter 10 integers and will not enter
  
  ## Flow chart:
 
- ![alt text](flowchart.jpg)
+ ![alt text](lab3.png)

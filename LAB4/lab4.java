@@ -40,7 +40,7 @@ public class lab4 {
     }
 
     // Function to process a deposit transaction
-    static float deposit() {
+    static String deposit() {
         // Prompt the user to enter the amount to be deposited and read in the input
         System.out.print("Enter the amount to be deposited : ");
         float amt =  Float.parseFloat(obj.nextLine());
@@ -50,7 +50,7 @@ public class lab4 {
         int c = 1;
 
         // Return a success message
-        return amt + ;
+        return amt + " || Successful";
     }
 
     // Function to process a withdrawal transaction

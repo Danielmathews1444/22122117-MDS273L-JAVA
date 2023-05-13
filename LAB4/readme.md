@@ -1,3 +1,39 @@
+## Question
+
+Write a JAVA Menu driven program that does the following:
+
+You can ONLY have the below variables as
+
+global variables
+
+Account Number
+
+Account Holder Name
+
+Account Balance
+
+You MUST have the below as functions
+
+To initialize the customer
+
+To deposit money
+
+To withdraw money
+
+To print the transactions
+
+To print account summary
+
+Your menu will have the following operations once the customer is created
+
+To deposit money
+
+To withdraw money
+
+To print the transactions
+
+To print account summary
+
 ## Bank Transaction Management 
 
 This program simulates a simple transaction management system for a  bank using Java. The program prompts the user to enter their account number, name, and account balance. It then displays a menu with options to deposit, withdraw, view transaction history, and view account summary.
@@ -24,4 +60,4 @@ Contributions to this project are welcome. Please fork the repository, make your
 
  ### Flow chart:
 
- ![alt text](flowchart.jpg)
+ ![alt text](lab4.png)

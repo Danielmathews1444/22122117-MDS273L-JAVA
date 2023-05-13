@@ -109,7 +109,5 @@ public class Student{
                 word="The Student is from the Union teritories of India";
         }
 System.out.print(word);
-    
-
 }
 }
